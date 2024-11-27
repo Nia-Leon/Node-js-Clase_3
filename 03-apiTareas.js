@@ -27,12 +27,14 @@ const tareaRouter = express.Router({ mergeParams: true });
  
 const usuarios = [
     { id: 1, nombre: 'Juan' },
-    { id: 2, nombre: 'María' }
+    { id: 2, nombre: 'María' },
+    { id: 3, nombre: 'Felipe' }
 ];
  
 const tareas = {
     1: { id: 1, descripcion: 'Comprar pan' },
-    2: { id: 2, descripcion: 'Leer un libro' }
+    2: { id: 2, descripcion: 'Leer un libro' },
+    3: { id: 3, descripcion: 'Jugar en el Parque' }
 };
  
 usuarioRouter.get('/', (req, res) => {
@@ -51,6 +53,9 @@ app.use('/usuarios/1', usuarioRouter);
 usuarioRouter.use('/:id/', tareaRouter);
 
 app.use('/usuarios/2', usuarioRouter);
+usuarioRouter.use('/:id', tareaRouter);
+
+app.use('/usuarios/3', usuarioRouter);
 usuarioRouter.use('/:id', tareaRouter);
  
 app.listen(3001, () => console.log('Servidor escuchado en http://localhost:3001'));

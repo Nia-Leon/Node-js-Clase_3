@@ -5,6 +5,7 @@ app.use(express.json()); // incorporado para procesar cuerpos JSON
 let usuarios = [
     { id: 1, nombre: 'Nia', email: 'nia@gmail.com'},
     { id: 2, nombre: 'Juan', email: 'juan@gmail.com'},
+    { id: 3, nombre: 'Felipe', email: 'felipe@gmail.com'},
 
 ];
 
